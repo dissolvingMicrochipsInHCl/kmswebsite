@@ -1,0 +1,415 @@
+/* =============================================
+   style.css — kms eurorack modules
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#topoCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -9999;
+    pointer-events: none;
+}
+
+/* IMPORTANT: Ensure your main wrappers are transparent so the canvas shows through */
+body, .wrapper {
+    background-color: transparent !important;
+}
+
+html {
+    background-color: #0b0f19;
+}
+
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-size: 600% 600%;
+  animation: gradientBG 120s ease infinite;
+  color: #e0e0e0;
+  font-family: 'Product Sans', 'Manrope', 'Segoe UI', sans-serif;
+}
+
+/* ---------- header ---------- */
+header {
+  width: 100%;
+  padding: 10px 2%;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 5000;
+  border-bottom: 1px solid #333;
+}
+
+header #logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+header #logo span {
+  font-size: 1.7em;
+  line-height: 45px;
+  font-family: 'Product Sans', sans-serif;
+}
+
+header #logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+.black-logo {
+    filter: invert(1);
+}
+
+
+#about {
+  display: flex;
+  gap: 2rem;
+}
+
+#about a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.2s;
+}
+
+#about a:hover {
+  color: #fff;
+}
+
+/* fixed class (JS toggles) */
+header.fixed {
+  background: #000;
+  border-bottom: 1px solid #444;
+}
+
+/* ---------- top ---------- */
+#top {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#top h1 img {
+  max-width: 300px;
+  height: auto;
+}
+
+#top span {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+/* responsive heights for #top */
+@media (min-width: 1001px) {
+  #top {
+    height: 1000px;
+  }
+  #top h1 {
+    font-size: 3em;
+  }
+}
+@media (max-width: 1000px) and (min-width: 651px) {
+  #top {
+    height: 600px;
+  }
+  #top h1 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 650px) {
+  #top {
+    height: 500px;
+    padding-top: 30%;
+  }
+  #top h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* ---------- overview (modules) ---------- */
+#overview {
+  width: 100%;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+#overview h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+#overview > span {
+  display: block;
+  font-size: 1.2em;
+  color: #aaa;
+  margin-bottom: 60px;
+}
+
+/* grid of module cards */
+.module-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 900px;
+  text-align: left;
+  backdrop-filter: blur(6px);
+  gap: 30px;
+  transition: border-color 0.3s;
+}
+
+.module-card:hover {
+  border-color: #666;
+}
+
+.module-card img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #111;
+  padding: 5px;
+  border: 1px solid #444;
+}
+
+.module-info {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.module-number {
+  font-size: 2em;
+  font-weight: 700;
+  color: #ec6550;
+}
+
+.module-name {
+  font-size: 1.3em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.module-description {
+  color: #aaa;
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.module-features {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.module-features li {
+  position: relative;
+  padding-left: 20px;
+  color: #ccc;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.module-features li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #ec6550;
+}
+
+.module-power {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 15px;
+  font-family: monospace;
+}
+
+.module-price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.module-price span {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  color: #ddd;
+}
+
+.module-price a {
+  color: #6be84f;
+  text-decoration: none;
+}
+
+/* ---------- contacts ---------- */
+#contacts {
+  width: 100%;
+  padding: 80px 5%;
+  border-top: 2px dashed #444;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
+
+#contacts div {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+#contacts .title {
+  font-size: 1.8em;
+  font-weight: 300;
+  color: #ccc;
+  margin-bottom: 25px;
+  display: block;
+}
+
+#contacts ul {
+  list-style: none;
+}
+
+#contacts li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 18px;
+  font-size: 0.95em;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+#contacts li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #ec6550;
+  font-weight: bold;
+}
+
+#contacts a {
+  color: #ec6550;
+  text-decoration: none;
+}
+
+#contacts a:hover {
+  text-decoration: underline;
+}
+
+#contacts strong {
+  color: #ddd;
+}
+
+/* ---------- faq ---------- */
+#faq {
+  width: 100%;
+  padding: 80px 5%;
+  border-top: 2px dashed #444;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
+
+#faq div {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+#faq .title {
+  font-size: 1.8em;
+  font-weight: 300;
+  color: #ccc;
+  margin-bottom: 25px;
+  display: block;
+}
+
+#faq ul {
+  list-style: none;
+}
+
+#faq li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 18px;
+  font-size: 0.95em;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+#faq li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #ec6550;
+  font-weight: bold;
+}
+
+#faq a {
+  color: #ec6550;
+  text-decoration: none;
+}
+
+#faq a:hover {
+  text-decoration: underline;
+}
+
+#faq strong {
+  color: #ddd;
+}
+
+/* ---------- media queries for small screens ---------- */
+@media (max-width: 700px) {
+  .module-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .module-card img {
+    width: 200px;
+  }
+  .module-info {
+    align-items: center;
+    text-align: center;
+  }
+  .module-price {
+    justify-content: center;
+  }
+  #about {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
