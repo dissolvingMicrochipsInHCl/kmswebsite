@@ -384,9 +384,14 @@ header.fixed {
   color: #ddd;
 }
 
-.container {
-   display: flex;
-   flex-direction: row;
+.row-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+#contacts, #faq {
+  flex: 1; 
 }
 
 /* ---------- media queries for small screens ---------- */
