@@ -272,7 +272,6 @@ header.fixed {
 #contacts {
   width: 100%;
   padding: 80px 5%;
-  border-top: 2px dashed #444;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -328,9 +327,8 @@ header.fixed {
 
 /* ---------- faq ---------- */
 #faq {
-  width: 100%;
+  width: 50%;
   padding: 80px 5%;
-  border-top: 2px dashed #444;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -386,12 +384,30 @@ header.fixed {
 
 .row-container {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 80px 5%;
 }
 
 #contacts, #faq {
-  flex: 1; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#contacts div, #faq div {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+@media (min-width: 768px) {
+  .row-container {
+    flex-direction: row;
+  }
+
+  #contacts, #faq {
+    flex: 1;
+  }
 }
 
 /* ---------- media queries for small screens ---------- */
