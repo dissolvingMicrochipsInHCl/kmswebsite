@@ -268,14 +268,21 @@ header.fixed {
   text-decoration: none;
 }
 
-/* ---------- contacts ---------- */
-#contacts {
-  width: 100%;
+/* ---------- c&faq ---------- */
+.row-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
   padding: 80px 5%;
+  border-top: 2px dashed #444;
+}
+
+/* ---------- contacts---------- */
+#contacts {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4rem;
+  flex: 1;
 }
 
 #contacts div {
@@ -327,12 +334,10 @@ header.fixed {
 
 /* ---------- faq ---------- */
 #faq {
-  width: 50%;
-  padding: 80px 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4rem;
+  flex: 1;
 }
 
 #faq div {
@@ -382,31 +387,10 @@ header.fixed {
   color: #ddd;
 }
 
-.row-container {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  padding: 80px 5%;
-}
-
-#contacts, #faq {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#contacts div, #faq div {
-  flex: 1 1 350px;
-  max-width: 500px;
-}
-
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .row-container {
-    flex-direction: row;
-  }
-
-  #contacts, #faq {
-    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
