@@ -385,7 +385,8 @@ header.fixed {
 }
 
 .container {
-  display: flex;
+   display: flex;
+   flex-direction: row;
 }
 
 /* ---------- media queries for small screens ---------- */
