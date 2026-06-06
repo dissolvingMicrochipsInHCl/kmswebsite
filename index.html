@@ -120,10 +120,9 @@
         </div>
       </div>
     </div>
-    
-    <div class="container">
-    <div>
-      <div id="contacts">
+
+    <div id="contacts">
+      <div>
         <span class="title">Как связаться?</span>
         <ul>
           <li><strong>Telegram-канал.</strong> Напишите в личные сообщения канала или в комментарии под любым постом, я
@@ -135,8 +134,8 @@
         </ul>
       </div>
     </div>
-    <div>
-      <div id="faq">
+    <div id="faq">
+      <div>
         <span class="title">Прочие вопросы</span>
         <ul>
           <li>Скидки не будет. Торга нет. Я придерживаюсь той же политики ценообразования, что и Factorio --- цена будет
@@ -146,7 +145,177 @@
           <li>Доставка преимущественно через OZON Посылки. Если вы в СПб — можно договориться о встрече.</li>
         </ul>
       </div>
+
     </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if ($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kms — eurorack modules</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Подключите локальный шрифт Product Sans или замените на доступный -->
+</head>
+
+<body>
+  <canvas id="topoCanvas"></canvas>
+  <div class="wrapper">
+    <header>
+      <div id="logo" onclick="slowScroll('#top')">
+        <span><img src="kms.svg" class="black-logo" alt="kms"></span>
+      </div>
+      <div id="about">
+        <a href="https://t.me/aerospaceemusic" title="Telegram">Telegram-канал</a>
+        <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+        <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+      </div>
+    </header>
+
+    <div id="top">
+      <h1><img src="kms.svg" class="black-logo" alt="kms"></h1>
+      <span>Небольшое производство модулей для eurorack-синтезаторов.</span>
+    </div>
+
+    <div id="overview">
+      <h2>Модули</h2>
+      <span>Линейка модулей kms</span>
+
+      <div class="module-card">
+        <img src="kms000.png" alt="kms000 VCO4069">
+        <div class="module-info">
+          <span class="module-number">kms000</span>
+          <span class="module-name">VCO4069</span>
+          <p class="module-description">Аналоговый генератор пилообразных и прямоугольных волн на основе
+            CD4069UBE. Основан на схеме <a href="https://schmitzbits.de/vco4069.html">VCO4069</a> за авторством Рене
+            Шмитца.</p>
+          <ul class="module-features">
+            <li>Выход пилообразного сигнала</li>
+            <li>Выход прямоугольного сигнала</li>
+            <li>1V/oct</li>
+            <li>PWM CV</li>
+          </ul>
+          <div class="module-power">Питание: +12V 15mA, –12V 12mA</div>
+          <div class="module-price">
+            <span>Не будет изготавливаться.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <img src="kms001.png" alt="kms001 Various Types of Noise">
+        <div class="module-info">
+          <span class="module-number">kms001</span>
+          <span class="module-name">Various Types of Noise</span>
+          <p class="module-description">Генератор шумовых сигналов и перкуссии.</p>
+          <ul class="module-features">
+            <li>Выход белого шума</li>
+            <li>Выход цветного (розового/синего) шума</li>
+            <li>Выход гранулированного шума</li>
+            <li>Внутренний транзисторный VCA + CV вход</li>
+            <li>Внутренний decay</li>
+            <li>Общий регулятор уровня громкости</li>
+          </ul>
+          <div class="module-power">Питание: +12V 20mA, –12V 5mA</div>
+          <div class="module-price">
+            <span>Собранный модуль: 6900₽</span>
+            <span>DIY-кит: нет в наличии</span>
+            <span>Печатные платы: 1800₽</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <img src="kms002.png" alt="kms002 SlothS">
+        <div class="module-info">
+          <span class="module-number">kms002</span>
+          <span class="module-name">SlothS</span>
+          <p class="module-description">Совместный модуль с POЯKYSYNTH. Два хаотичных, медленных LFO, основанных на <a
+              href="https://www.nonlinearcircuits.com/modules/p/4hp-sloth-chaos?rq=sloth">Sloth Chaos</a> с добавлением
+            <a href="https://sdiy.info/wiki/CGS_slope_detector">Sloth Detector</a> закроет большую часть ваших
+            потребностей в случайных CV-сигналах, гейтах и триггерах.
+          </p>
+          <ul class="module-features">
+            <li>Два хаотичных LFO, двигающихся независимо друг от друга</li>
+            <li>Три различных выхода --- X, Y, Z --- для каждого LFO.</li>
+            <li>Выход суммы Σ и выход инвертированной суммы Σ двух LFO</li>
+            <li>CV-входы и потенциометры для незавимого управления частотой обеих LFO</li>
+            <li>Slope Detector, подвязанный к выходу Σ без подключения внешнего CV сигнала и выходы Falling, Steady,
+              Rising</li>
+          </ul>
+          <div class="module-power">Питание: +12V 60mA, –12V 40mA</div>
+          <div class="module-price">
+            <span>Собранный модуль: от 12000₽</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <img src="kms006.png" alt="kms006 Thermal">
+        <div class="module-info">
+          <span class="module-number">kms006</span>
+          <span class="module-name">Thermal</span>
+          <p class="module-description">Soon™</p>
+          <ul class="module-features">
+            <li>5+ шейперов</li>
+            <li>5+ эффектов</li>
+            <li>Очень красивый UI на круглом IPS-экране (ну точно не копирка Thermal VST!)</li>
+          </ul>
+          <div class="module-power">Питание: soon™</div>
+          <div class="module-price">
+            <span>Собранный модуль: от 15000₽</span>
+            <span>DIY-кит: от 9000₽</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contacts">
+      <div>
+        <span class="title">Как связаться?</span>
+        <ul>
+          <li><strong>Telegram-канал.</strong> Напишите в личные сообщения канала или в комментарии под любым постом, я
+            отвечу в течение часа с 08:00 до 23:00 по МСК.</li>
+          <li><strong>Авито.</strong> Терпеть не могу Авито, поэтому там наценка на все товары (просто за факт
+            размещения)
+            + отвечаю раз в 2-3, а то и раз в 6-8 дней.</li>
+          <li><strong>Почта:</strong> <a href="mailto:aerospaceemusic@gmail.com">aerospaceemusic@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="faq">
+      <div>
+        <span class="title">Прочие вопросы</span>
+        <ul>
+          <li>Скидки не будет. Торга нет. Я придерживаюсь той же политики ценообразования, что и Factorio --- цена будет
+            только расти. Впрочем, иногда цена снижается, если дешевеют
+            компоненты.
+          </li>
+          <li>Доставка преимущественно через OZON Посылки. Если вы в СПб — можно договориться о встрече.</li>
+        </ul>
+      </div>
+
     </div>
 
   </div>
