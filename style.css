@@ -384,8 +384,8 @@ header.fixed {
   color: #ddd;
 }
 
-css.container {
-  display: flex; /* Выстраивает дочерние элементы в ряд */
+.container {
+  display: flex;
 }
 
 /* ---------- media queries for small screens ---------- */
