@@ -20,6 +20,7 @@
         <a href="https://t.me/aerospaceemusic" title="Telegram">Telegram-канал</a>
         <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
         <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+        <a href="#" title="Standalone-проекты">Standalone-проекты</a>
       </div>
     </header>
 
@@ -48,7 +49,7 @@
           </ul>
           <div class="module-power">Питание: +12V 15mA, –12V 12mA</div>
           <div class="module-price">
-            <span>Не будет изготавливаться.</span>
+            <span>Do it yourself!</span>
           </div>
         </div>
       </div>
@@ -67,11 +68,11 @@
             <li>Внутренний decay</li>
             <li>Общий регулятор уровня громкости</li>
           </ul>
-          <div class="module-power">Питание: +12V 20mA, –12V 5mA</div>
+          <div class="module-power">Питание: +12V 37mA, –12V 11mA</div>
           <div class="module-price">
-            <span>Собранный модуль: 6900₽</span>
-            <span>DIY-кит: нет в наличии</span>
-            <span>Печатные платы: 1800₽</span>
+            <span>Собранный модуль: 7200₽</span>
+            <span>DIY-кит (распаянные SMD): 4700₽</span>
+            <span>Печатные платы: нет в наличии</span>
           </div>
         </div>
       </div>
@@ -101,6 +102,69 @@
         </div>
       </div>
 
+      <div class="module-card">
+        <img src="img/kms003.png" alt="kms003 Dual4069">
+        <div class="module-info">
+          <span class="module-number">kms003</span>
+          <span class="module-name">Dual4069</span>
+          <p class="module-description">Два аналоговых осциллятора на основе микросхемы CD4069UBE. Сильно модифицированная версия <a href="https://schmitzbits.de/vco4069.html">VCO4069/kms000</a> за авторством Рене
+            Шмитца. В <b>kms003</b>, в отличие от <b>kms000</b>, в качестве ядра осциллятора используется не вся CD4069, а только её половина --- поэтому стало возможно реализовать два независимых осциллятора на одной схеме.
+            Также схема использует два ОУ TL074 для буферизации и вейвшейпинга сигнала --- все выходные каналы имеют амплитуду 10Vpp и одинаковый питч между собой.</p>
+          <ul class="module-features">
+            <li>Выход пилообразного сигнала</li>
+            <li>Выход прямоугольного сигнала</li
+            <li>Выход треугольного сигнала</li>
+            <li>Выход синусоиды</li>
+            <li>1V/oct CV</li>
+            <li>PWM CV</li>
+            <li>CV2 подключается к CV1, если ничего не подключено к входу CV2</li>
+            <li>Sync для первого осциллятора, переключатель октав для второго</li>
+          </ul>
+          <div class="module-power">Питание: +12V 34mA, –12V 26mA</div>
+          <div class="module-price">
+            <span>Собранный модуль: от 8200₽</span>
+            <span>DIY-кит (распаянные SMD): от 5200₽</span>
+            <span>Платы: от 2100₽</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <img src="img/kms004.png" alt="kms004 MIDICM">
+        <div class="module-info">
+          <span class="module-number">kms004</span>
+          <span class="module-name">MIDICM</span>
+          <p class="module-description">Восьмиканальный аналогово-цифровой микшер с 80 шагами аттенюации, управляемый по миди. Нативно работает с микшером M-VAVE SMC-MIXER в режиме CC.</p>
+          <ul class="module-features">
+            <li>8 моно-входов</li>
+            <li>1 моно-выход</li>
+            <li>Mute/solo индикация для каждого канала</li>
+            <li>Разработан специально для USB-MIDI контроллеров</li>
+          </ul>
+          <div class="module-power">Питание: soon™</div>
+          <div class="module-price">
+            <span>Soon™</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <img src="img/kms005.png" alt="kms005 Powah Plünk">
+        <div class="module-info">
+          <span class="module-number">kms006</span>
+          <span class="module-name">Powah Plünk</span>
+          <p class="module-description">Источник питания для небольших кейсов на основе DC-DC конвертера MAX775. Работает от адаптеров на +12V.</p>
+          <ul class="module-features">
+            <li>+12V: soon™ A</li>
+            <li>-12V: 0.4 A </li>
+            <li>5V: вплоть до 1.5 A</li>
+          </ul>
+          <div class="module-price">
+            <span>Собранный модуль: от 7000₽</span>
+          </div>
+        </div>
+      </div>
+      
       <div class="module-card">
         <img src="img/kms006.png" alt="kms006 Thermal">
         <div class="module-info">
@@ -146,6 +210,7 @@
             компоненты.
           </li>
           <li>Доставка преимущественно через OZON Посылки. Если вы в СПб — можно договориться о встрече.</li>
+          <li>"Собранный модуль" означает, что модуль будет <b>не только собран, но и откалиброван/настроен/прошит</b> перед отправкой и вы получите готовое устройство. С кабелем.</li>
         </ul>
       </div>
     </div>
